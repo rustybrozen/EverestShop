@@ -41,6 +41,7 @@ app.use(compression());
 // thiết lập cho EJS
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
+app.set('trust proxy', 1);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // thiết lập body parser
@@ -95,21 +96,21 @@ mongoose.connect(process.env.MONGODB_URI, {
 }).then(() => console.log('Đã kết nối tới cơ sở dữ MongoDB'))
   .catch(err => console.log('Kết nối tới cơ sở dữ liệu MongoDB thất bại', err));
 
-const PORT = process.env.PORT || 3000;
-const url = `http://localhost:${PORT}`;
+// const PORT = process.env.PORT || 3000;
+// const url = `http://localhost:${PORT}`;
 
-function openBrowser(url) {
-  switch (process.platform) {
-    case 'darwin':
-      exec(`open ${url}`);
-      break;
-    case 'win32':
-      exec(`start ${url}`);
-      break;
-    default:
-      exec(`xdg-open ${url}`);
-  }
-}
+// function openBrowser(url) {
+//   switch (process.platform) {
+//     case 'darwin':
+//       exec(`open ${url}`);
+//       break;
+//     case 'win32':
+//       exec(`start ${url}`);
+//       break;
+//     default:
+//       exec(`xdg-open ${url}`);
+//   }
+// }
 
 
 //Chạy port
