@@ -908,3 +908,4 @@ async function importMockData() {
     console.error('Tạo dữ liệu thất bại: ' + error.message);
   }
 };
+process.exit(0);
