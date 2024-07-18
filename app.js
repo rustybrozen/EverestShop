@@ -9,7 +9,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const { exec } = require('child_process');
 const compression = require('compression');
+const crypto = require('crypto');
 
+const secretKey = crypto.randomBytes(64).toString('hex');
 
 require('dotenv').config();
 
@@ -25,23 +27,33 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json())
 app.use(mongoSanitize());
+// app.use(session({
+//   secret: 'yourSecret',
+//   resave: false,
+//   saveUninitialized: false,
+//   cookie: {
+//     maxAge: 30 * 24 * 60 * 60 * 1000, // Example: 30 days
+//     httpOnly: true,
+//     secure: process.env.NODE_ENV === "production",
+//   }
+// }));
+
+
+
+
 app.use(session({
-  secret: 'yourSecret',
+  secret: secretKey, // Use the secret key from the environment variable
   resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 30 * 24 * 60 * 60 * 1000, // Example: 30 days
-    // httpOnly: true,
-    secure: process.env.NODE_ENV === "production",// Set to true in production
-    sameSite: 'lax' // or 'strict'
-  }
+  saveUninitialized: true,
+  cookie: { secure: false } // Use true if you're serving over HTTPS
 }));
+
+
 app.use(compression());
 
 // thiết lập cho EJS
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
-app.set('trust proxy', 1);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // thiết lập body parser
