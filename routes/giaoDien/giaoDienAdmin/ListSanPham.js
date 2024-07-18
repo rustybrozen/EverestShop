@@ -24,7 +24,7 @@ router.get('/invoice/:orderid', currentU,isNVBH, async (req, res) => {
     }
 
 
-    res.render('invoice', { currentUser: req.c, order });
+    res.render('invoice-admin', { currentUser: req.c, order });
   } catch (error) {
     console.error(error);
     res.status(500).send('Server error');
