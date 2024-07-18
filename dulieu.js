@@ -5,11 +5,14 @@ const Order = require('./models/Order');
 const User = require('./models/User');
 const Inbox = require('./models/Inbox');
 
+require('dotenv').config();
+
+const PORT = process.env.PORT || 3000;
+const url = `http://localhost:${PORT}`;
 
 
 
-
-mongoose.connect('mongodb://127.0.0.1:27017/everestShop', {
+mongoose.connect(process.env.MONGODB_URI, {
 })
   .then(() => {
     console.log('Đã kết nối tới MongoDB');
