@@ -31,8 +31,9 @@ app.use(session({
   saveUninitialized: false,
   cookie: {
     maxAge: 30 * 24 * 60 * 60 * 1000, // Example: 30 days
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production"// Set to true in production
+    // httpOnly: true,
+    secure: process.env.NODE_ENV === "production",// Set to true in production
+    sameSite: 'lax' // or 'strict'
   }
 }));
 app.use(compression());
