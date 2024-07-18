@@ -29,10 +29,11 @@ router.get('/settings/users/:userId/edit', isAdmin, async (req, res) => {
 //Đường dẫn để xá nhận chỉnh sửa info người dùng
 router.post('/settings/users/:userId/edit', isAdmin, async (req, res) => {
   const { role,isActive } = req.body;
+  const {userId} = req.params
 
   try {
     const user = await User.findByIdAndUpdate(req.params.userId, { role,   isActive }, { new: true });
-    res.redirect('/settings/');
+    res.redirect(`/settings/users/${userId}/edit`);
   } catch (error) {
     res.status(500).send('Server error');
   }

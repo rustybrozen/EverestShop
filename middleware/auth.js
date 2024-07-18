@@ -97,7 +97,11 @@ const checkLoggedIn = async (req, res, next) => {
     try {
         if (req.session.user) {
             const c = await User.findById(req.session.user._id);
-            req.c = c; next();
+            req.c = c;
+            if (req.c.isActive === false) {
+                return res.redirect('/logout');
+            }
+            next();
         }
         else {
             return res.redirect('/login');
