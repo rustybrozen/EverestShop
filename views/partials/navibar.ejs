@@ -1,28 +1,17 @@
 <script src="https://kit.fontawesome.com/9e2be1376b.js" crossorigin="anonymous"></script>
 
-<header class="bg-danger text-white d-flex justify-content-center align-items-center" style="height:30px">
-<p class="text-center m-0 font-weight-900">Website đang còn được phát triển. Đội ngũ chúng mình sẽ sớm hoàn thành toàn diện trong thời gian sớm nhất.</p></header>
+<header class="bg-danger text-white d-flex justify-content-center align-items-center py-1">
+  <p class="text-center m-0 font-weight-bold" style="font-size: 15px;">Website đang còn được phát triển. Đội ngũ chúng mình sẽ sớm hoàn thành toàn diện trong thời gian sớm nhất.</p>
+</header>
 <nav class="navbar navbar-expand-lg bg-light pe-5 ps-5 sticky-top shadow-sm">
   <div class="container-fluid">
-    <a class="navbar-brand fs-4 me-0 font-weight-bold" href="/">Evérest</a>
+    <a class="navbar-brand fs-4 me-0 font-weight-bold" href="/">Evérest<%if (currentUser){%><% if (currentUser.role==='Admin'){ %><span class="badge rounded-pill text-bg-danger m-0" style="font-size: 10px;">Admin</span><%}else if (currentUser.role==='Nhân viên kho hàng'){ %><span class="badge rounded-pill text-bg-danger">Nhân viên kho hàng</span><%}else if (currentUser.role==='Nhân viên bán hàng'){ %><span class="badge rounded-pill text-bg-danger">Nhân viên bán hàng</span><%}}%>
+    </a>
           
-      <%if (currentUser){%>
-      <% if (currentUser.role==='Admin'){ %>
-      <span class="badge rounded-pill text-bg-danger">
-      Admin
-      </span>
-      <%}else if (currentUser.role==='Nhân viên kho hàng'){ %>
-      <span class="badge rounded-pill text-bg-danger">
-      Nhân viên kho hàng
-      </span>
-      <%}else if (currentUser.role==='Nhân viên bán hàng'){ %>
-      <span class="badge rounded-pill text-bg-danger">
-      Nhân viên bán hàng
-      </span>
-      <%}}%>
+    
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
@@ -44,21 +33,21 @@
       <% if (currentUser){ %>
       <% if (currentUser.role==='Admin' ){ %>
       <li class="nav-item">
-        <a class="btn btn-danger" href="/settings">Quản lí Admin</a>
+        <a class="btn btn-danger fs-6 me-2" href="/settings">Quản lí Admin</a>
       </li>
-      <li class="nav-item ms-3">
-        <a class="btn btn-danger" href="/messages">Tin nhắn</a>
+      <li class="nav-item">
+        <a class="btn btn-danger fs-6" href="/messages">Tin nhắn</a>
       </li>
       <% }else if  (currentUser.role==='Nhân viên bán hàng' ){ %>
       <li class="nav-item">
-        <a class="btn btn-warning text-white" href="/settings">Quản lí bán hàng</a>
+        <a class="btn btn-warning text-white fs-6 me-2" href="/settings">Quản lí bán hàng</a>
       </li>
       <li class="nav-item ms-3">
-        <a class="btn btn-warning text-white" href="/messages">Tin nhắn</a>
+        <a class="btn btn-warning text-white fs-6" href="/messages">Tin nhắn</a>
       </li>
       <%}else if  (currentUser.role==='Nhân viên kho hàng' ){ %>
       <li class="nav-item">
-        <a class="btn btn-warning text-white" href="/settings">Quản lí kho hàng</a>
+        <a class="btn btn-warning text-white fs-6" href="/settings">Quản lí kho hàng</a>
       </li>
       <%}%>
 
@@ -67,10 +56,10 @@
       </ul>
 
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item position-relative me-2">
+        <li class="nav-item position-relative">
           <a class="nav-link fs-6" href="/cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span id="cartQuantity" class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            <i class="fa-solid fa-cart-shopping"><span id="cartQuantity" class="top-100 start-100 translate-middle badge rounded-pill bg-danger font-normal ms-1" style="font-size: 12px;">0</span></i>
+            
           </a>
         </li>
 
