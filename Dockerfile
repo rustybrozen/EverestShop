@@ -2,26 +2,25 @@
 # https://hub.docker.com/_/node
 FROM node:latest
 
-# Create and set the working directory.
-WORKDIR /usr/src/app
+# Set the working directory in the container
+WORKDIR /app
 
-# Copy package.json and package-lock.json (or yarn.lock) to the working directory.
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies.
+# Install dependencies
 RUN npm install
 
-# Copy the rest of the application code to the working directory.
+# Copy the rest of the application code
 COPY . .
 
-# Copy the start.sh script to the working directory.
-COPY start.sh .
+# Create a shell script to run our files in sequence
+RUN echo '#!/bin/sh' > start.sh && \
+    echo 'node dulieu.js && node app.js' >> start.sh && \
+    chmod +x start.sh
 
-# Make the script executable.
-RUN chmod +x start.sh
+# Expose the port the app runs on
+EXPOSE 3000
 
-# Expose the port your app will run on.
-EXPOSE 80
-
-# Command to run the application.
+# Command to run the start script
 CMD ["./start.sh"]
