@@ -20,7 +20,7 @@ RUN echo '#!/bin/sh' > start.sh && \
     chmod +x start.sh
 
 # Expose the port the app runs on
-EXPOSE 3000
+EXPOSE 80
 
 # Command to run the start script
 CMD ["./start.sh"]
