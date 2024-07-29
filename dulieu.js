@@ -7,8 +7,7 @@ const Inbox = require('./models/Inbox');
 
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3000;
-const url = `http://localhost:${PORT}`;
+
 
 
 
