@@ -14,7 +14,8 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-RUN cp .env_default .env
+# Rename .env_default to .env
+RUN mv .env_default .env
 
 # Create a shell script to run our files in sequence
 RUN echo '#!/bin/sh' > start.sh && \

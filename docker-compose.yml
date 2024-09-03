@@ -1,21 +1,26 @@
-version: '3'
+
 services:
   app:
     build: .
     ports:
-      - "${PORT}:3000"
+      - "${PORT}:${PORT}"  
+    environment:
+      - MONGODB_URI=${MONGODB_URI} 
     depends_on:
       - mongo
-    environment:
-      - MONGODB_URI=${MONGODB_URI}
 
+
+
+      
   mongo:
-   image: mongo:latest
-   environment:
-     MONGO_INITDB_ROOT_USERNAME: root
-     MONGO_INITDB_ROOT_PASSWORD: adminroot123
-   volumes:
-     - mongodb_data:/data/db
+    image: mongo:latest
+    restart: always
+    container_name: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - mongodb_data:/data/db
 
 volumes:
   mongodb_data:
