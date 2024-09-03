@@ -18,8 +18,8 @@ require('dotenv').config();
 
 
 
-const apiRoutes = require('./routes/api/')
-const renderRoutes = require('./routes/giaoDien')
+const apiRoutes = require('./controllers/api/')
+const renderRoutes = require('./controllers/giaoDien')
 
 
 // thiết lập nền tảng cho project

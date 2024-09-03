@@ -15,7 +15,6 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
   .then(() => {
     console.log('Đã kết nối tới MongoDB');
-    console.log('Bắt đầu tạo cơ sở dữ liệu cho ứng dụng web');
     importMockData();
   })
   .catch(err => {
