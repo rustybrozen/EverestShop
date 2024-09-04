@@ -114,25 +114,26 @@ async function importMockData() {
     // iPhone Products
     {
       name: 'iPhone 12',
-      model: '12',
-      description: 'The latest iPhone with A14 Bionic chip',
+      model: 'A2341',
+      description: 'Smartphone với thiết kế hiện đại, hỗ trợ 5G, hệ điều hành iOS mới nhất.',
       image: 'iphone12.jpg',
+      os: 'iOS 16',
       generalSpecifications: {
-        cpu: 'A14 Bionic',
+        cpu: 'Apple A14 Bionic',
         camera: { primary: '12MP', secondary: '12MP' },
         battery: 2815,
         display: '6.1-inch Super Retina XDR'
       },
       colorVariants: [
         {
-          color: 'Black',
+          color: 'Đen',
           specVariations: [
             { ram: 4, storage: 64, price: 20000000, stock: 10 },
             { ram: 4, storage: 128, price: 22000000, stock: 15 }
           ]
         },
         {
-          color: 'White',
+          color: 'Trắng',
           specVariations: [
             { ram: 4, storage: 64, price: 20000000, stock: 10 },
             { ram: 4, storage: 128, price: 22000000, stock: 15 }
@@ -149,25 +150,26 @@ async function importMockData() {
     },
     {
       name: 'iPhone 14 Pro Max',
-      model: '14 pro Max',
-      description: 'iPhone 14 Pro Max một siêu phẩm trong giới smartphone được nhà Táo tung ra thị trường vào tháng 09/2022. Máy trang bị con chip Apple A16 Bionic vô cùng mạnh mẽ, đi kèm theo đó là thiết kế màn hình mới, hứa hẹn mang lại những trải nghiệm đầy mới mẻ cho người dùng iPhone.',
+      model: 'A2894',
+      description: 'Smartphone cao cấp với màn hình ProMotion, hỗ trợ 5G, camera nâng cao và hiệu suất mạnh mẽ với chip A16 Bionic.',
       image: '14promax.jpg',
+      os: 'iOS 17',
       generalSpecifications: {
         cpu: 'Apple A16 Bionic',
-        camera: { primary: 'Chính 48 MP & Phụ 12 MP, 12 MP', secondary: '12MP' },
+        camera: { primary: '48MP (rộng) + 12MP (siêu rộng) + 12MP (telephoto)', secondary: '12MP TrueDepth' },
         battery: 4323,
-        display: 'OLED, 6.7", Super Retina XDR'
+        display: '6.7-inch Super Retina XDR với ProMotion'
       },
       colorVariants: [
         {
-          color: 'Black',
+          color: 'Đen',
           specVariations: [
             { ram: 8, storage: 128, price: 19200000, stock: 10 },
             { ram: 8, storage: 256, price: 21000000, stock: 15 }
           ]
         },
         {
-          color: 'White',
+          color: 'Trắng',
           specVariations: [
             { ram: 8, storage: 128, price: 19200000, stock: 10 },
             { ram: 8, storage: 256, price: 21000000, stock: 15 }
@@ -184,25 +186,26 @@ async function importMockData() {
     },
     {
       name: 'iPhone 12 Pro',
-      model: '12 Pro',
-      description: 'The latest iPhone Pro with A14 Bionic chip',
+      model: 'A2341',
+      description: 'Smartphone cao cấp với thiết kế kim loại, hỗ trợ 5G, và hệ thống camera ba ống kính.',
       image: 'iphone12pro.jpg',
+      os: 'iOS 16',
       generalSpecifications: {
-        cpu: 'A14 Bionic',
-        camera: { primary: '12MP', secondary: '12MP' },
+        cpu: 'Apple A14 Bionic',
+        camera: { primary: '12MP (rộng) + 12MP (siêu rộng) + 12MP (telephoto)', secondary: '12MP' },
         battery: 2815,
         display: '6.1-inch Super Retina XDR'
       },
       colorVariants: [
         {
-          color: 'Black',
+          color: 'Đen',
           specVariations: [
             { ram: 6, storage: 128, price: 30000000, stock: 10 },
             { ram: 6, storage: 256, price: 32000000, stock: 15 }
           ]
         },
         {
-          color: 'White',
+          color: 'Trắng',
           specVariations: [
             { ram: 6, storage: 128, price: 30000000, stock: 10 },
             { ram: 6, storage: 256, price: 32000000, stock: 15 }
@@ -219,25 +222,26 @@ async function importMockData() {
     },
     {
       name: 'iPhone 11',
-      model: '11',
-      description: 'Previous generation iPhone with A13 Bionic chip',
+      model: 'A2111',
+      os: 'iOS 16',
+      description: 'Smartphone với hiệu năng mạnh mẽ, hệ thống camera kép và thiết kế thân thiện.',
       image: 'iphone11.jpg',
       generalSpecifications: {
-        cpu: 'A13 Bionic',
-        camera: { primary: '12MP', secondary: '12MP' },
+        cpu: 'Apple A13 Bionic',
+        camera: { primary: '12MP (wide) + 12MP (ultra-wide)', secondary: '12MP' },
         battery: 3110,
         display: '6.1-inch Liquid Retina HD'
       },
       colorVariants: [
         {
-          color: 'Black',
+          color: 'Đen',
           specVariations: [
             { ram: 4, storage: 64, price: 15000000, stock: 20 },
             { ram: 4, storage: 128, price: 17000000, stock: 25 }
           ]
         },
         {
-          color: 'White',
+          color: 'Trắng',
           specVariations: [
             { ram: 4, storage: 64, price: 15000000, stock: 20 },
             { ram: 4, storage: 128, price: 17000000, stock: 25 }
@@ -253,26 +257,27 @@ async function importMockData() {
       productBrand: null
     },
     {
-      name: 'iPhone SE',
-      model: 'SE',
-      description: 'Affordable iPhone with A13 Bionic chip',
+      name: 'iPhone SE (2020)',
+      model: 'A2275',
+      description: 'Smartphone với hiệu năng mạnh mẽ nhờ chip A13, thiết kế nhỏ gọn và camera chất lượng cao.',
       image: 'iphonese.jpg',
+      os: 'iOS 16',
       generalSpecifications: {
-        cpu: 'A13 Bionic',
+        cpu: 'Apple A13 Bionic',
         camera: { primary: '12MP', secondary: '7MP' },
         battery: 1821,
         display: '4.7-inch Retina HD'
       },
       colorVariants: [
         {
-          color: 'Black',
+          color: 'Đen',
           specVariations: [
             { ram: 3, storage: 64, price: 12000000, stock: 30 },
             { ram: 3, storage: 128, price: 14000000, stock: 35 }
           ]
         },
         {
-          color: 'White',
+          color: 'Trắng',
           specVariations: [
             { ram: 3, storage: 64, price: 12000000, stock: 30 },
             { ram: 3, storage: 128, price: 14000000, stock: 35 }
@@ -290,9 +295,10 @@ async function importMockData() {
     // Samsung Products
     {
       name: 'Samsung Galaxy S21',
-      model: 'S21',
-      description: 'Flagship Samsung phone with Exynos 2100',
+      model: 'SM-G991B',
+      description: 'Smartphone cao cấp với hiệu năng mạnh mẽ, hệ thống camera đa năng và thiết kế hiện đại.',
       image: 'samsungs21.jpg',
+      os: 'Android 13',
       generalSpecifications: {
         cpu: 'Exynos 2100',
         camera: { primary: '64MP', secondary: '10MP' },
@@ -325,12 +331,13 @@ async function importMockData() {
     },
     {
       name: 'Samsung Galaxy Note 20',
-      model: 'Note 20',
-      description: 'High-end Samsung phone with S-Pen',
+      model: 'SM-N980F',
+      description: 'Smartphone cao cấp với bút S Pen tích hợp, hiệu năng mạnh mẽ và hệ thống camera đa chức năng.',
       image: 'samsungnote20.jpg',
+      os: 'Android 13',
       generalSpecifications: {
         cpu: 'Exynos 990',
-        camera: { primary: '64MP', secondary: '10MP' },
+        camera: { primary: '12MP (wide) + 64MP (telephoto) + 12MP (ultra-wide)', secondary: '10MP' },
         battery: 4300,
         display: '6.7-inch Super AMOLED Plus'
       },
@@ -360,12 +367,13 @@ async function importMockData() {
     },
     {
       name: 'Samsung Galaxy A52',
-      model: 'A52',
-      description: 'Mid-range Samsung phone with Snapdragon 720G',
+      model: 'SM-A525F',
+      description: 'Smartphone tầm trung với hiệu năng ổn định, màn hình AMOLED sắc nét và hệ thống camera đa chức năng.',
       image: 'samsunga52.jpg',
+      os: 'Android 13',
       generalSpecifications: {
         cpu: 'Snapdragon 720G',
-        camera: { primary: '64MP', secondary: '12MP' },
+        camera: { primary: '64MP (wide) + 12MP (ultra-wide) + 5MP (macro) + 5MP (depth', secondary: '12MP' },
         battery: 4500,
         display: '6.5-inch Super AMOLED'
       },
@@ -395,9 +403,10 @@ async function importMockData() {
     },
     {
       name: 'Samsung Galaxy M51',
-      model: 'M51',
-      description: 'Samsung phone with massive 7000mAh battery',
+      model: 'SM-M515F',
+      description: 'Smartphone với dung lượng pin lớn, hiệu năng ổn định và màn hình Super AMOLED.',
       image: 'samsungm51.jpg',
+      os: 'Android 13',
       generalSpecifications: {
         cpu: 'Snapdragon 730G',
         camera: { primary: '64MP', secondary: '12MP' },
@@ -431,12 +440,13 @@ async function importMockData() {
     // Vivo Products
     {
       name: 'Vivo V21',
-      model: 'V21',
-      description: 'Vivo phone with 44MP front camera',
+      model: 'V2101',
+      description: 'Smartphone tầm trung với thiết kế mỏng nhẹ, hiệu năng ổn định và camera selfie chất lượng cao.',
       image: 'vivov21.jpg',
+      os: 'Android 11 (Funtouch OS 11.1)',
       generalSpecifications: {
-        cpu: 'Dimensity 800U',
-        camera: { primary: '64MP', secondary: '8MP' },
+        cpu: 'MediaTek Dimensity 700',
+        camera: { primary: '64MP (wide) + 8MP (ultra-wide) + 2MP (macro)', secondary: '44MP (Dual Pixel)' },
         battery: 4000,
         display: '6.44-inch AMOLED'
       },
@@ -466,12 +476,13 @@ async function importMockData() {
     },
     {
       name: 'Vivo Y51',
-      model: 'Y51',
-      description: 'Vivo phone with 48MP camera and 5000mAh battery',
+      model: 'V2030',
+      description: 'Smartphone tầm trung với thiết kế đẹp mắt, hiệu năng ổn định và camera đa chức năng.',
       image: 'vivoy51.jpg',
+      os: 'Android 11 (Funtouch OS 11.1)',
       generalSpecifications: {
-        cpu: 'Snapdragon 665',
-        camera: { primary: '48MP', secondary: '8MP' },
+        cpu: 'Snapdragon 662',
+        camera: { primary: '48MP (wide) + 8MP (ultra-wide) + 2MP (macro)', secondary: '16MP' },
         battery: 5000,
         display: '6.58-inch IPS LCD'
       },
@@ -501,14 +512,15 @@ async function importMockData() {
     },
     {
       name: 'Vivo X50',
-      model: 'X50',
-      description: 'Vivo phone with gimbal camera system',
+      model: 'V1911A',
+      description: 'Smartphone cao cấp với hiệu năng mạnh mẽ, hệ thống camera tiên tiến và thiết kế sang trọng.',
       image: 'vivox50.jpg',
+      os: 'Android 10 (Funtouch OS 10.5)',
       generalSpecifications: {
-        cpu: 'Snapdragon 765G',
-        camera: { primary: '48MP', secondary: '13MP' },
-        battery: 4200,
-        display: '6.56-inch AMOLED'
+        cpu: 'Qualcomm Snapdragon 765G',
+        camera: { primary: '48MP (wide) + 13MP (telephoto) + 8MP (ultra-wide) + 5MP (macro)', secondary: '32MP' },
+        battery: 4330 ,
+        display: '6.56-inch AMOLED, 90Hz'
       },
       colorVariants: [
         {
@@ -536,12 +548,13 @@ async function importMockData() {
     },
     {
       name: 'Vivo Y20',
-      model: 'Y20',
-      description: 'Budget Vivo phone with large battery',
+      model: 'V2026',
+      description: 'Smartphone tầm trung với hiệu năng ổn định, thiết kế gọn gàng và dung lượng pin lớn.',
       image: 'vivoy20.jpg',
+      os: 'Android 10 (Funtouch OS 11)',
       generalSpecifications: {
-        cpu: 'Snapdragon 460',
-        camera: { primary: '13MP', secondary: '2MP' },
+        cpu: 'Qualcomm Snapdragon 460',
+        camera: { primary: '13MP (wide) + 2MP (macro) + 2MP (depth)', secondary: '8MP' },
         battery: 5000,
         display: '6.51-inch IPS LCD'
       },
@@ -572,14 +585,15 @@ async function importMockData() {
     // Xiaomi Products
     {
       name: 'Xiaomi Mi 11',
-      model: 'Mi 11',
-      description: 'Flagship Xiaomi phone with Snapdragon 888',
+      model: 'M2011K2C',
+      description: 'Smartphone cao cấp với màn hình AMOLED chất lượng cao, hiệu năng mạnh mẽ và camera chính 108MP.',
       image: 'mi11.jpg',
+      os: 'Android 11 (MIUI 12.5)',
       generalSpecifications: {
-        cpu: 'Snapdragon 888',
-        camera: { primary: '108MP', secondary: '13MP' },
+        cpu: 'Qualcomm Snapdragon 888',
+        camera: { primary: '108MP (wide) + 13MP (ultra-wide) + 5MP (macro)', secondary: '20MP' },
         battery: 4600,
-        display: '6.81-inch AMOLED'
+        display: '6.81-inch AMOLED, 120Hz'
       },
       colorVariants: [
         {
@@ -607,12 +621,13 @@ async function importMockData() {
     },
     {
       name: 'Xiaomi Redmi Note 10',
-      model: 'Redmi Note 10',
-      description: 'Affordable Xiaomi phone with AMOLED display',
+      model: 'M2101K7AG',
+      description: 'Smartphone tầm trung với màn hình AMOLED sắc nét, hiệu năng ổn định và camera đa chức năng.',
       image: 'redminote10.jpg',
+      os: 'Android 11 (MIUI 12)',
       generalSpecifications: {
-        cpu: 'Snapdragon 678',
-        camera: { primary: '48MP', secondary: '8MP' },
+        cpu: 'Qualcomm Snapdragon 678',
+        camera: { primary: '48MP (wide) + 8MP (ultra-wide) + 2MP (macro) + 2MP (depth)', secondary: '13MP' },
         battery: 5000,
         display: '6.43-inch AMOLED'
       },
@@ -642,14 +657,15 @@ async function importMockData() {
     },
     {
       name: 'Xiaomi Poco X3 Pro',
-      model: 'Poco X3 Pro',
-      description: 'Performance-focused Xiaomi phone',
+      model: 'M2102J20SG',
+      description: 'Smartphone tầm trung với hiệu năng mạnh mẽ, màn hình lớn và hệ thống camera đa chức năng.',
       image: 'mipocox3.jpg',
+      os: 'Android 11 (MIUI 12)',
       generalSpecifications: {
-        cpu: 'Snapdragon 860',
-        camera: { primary: '48MP', secondary: '8MP' },
+        cpu: 'Qualcomm Snapdragon 860',
+        camera: { primary: '48MP (wide) + 8MP (ultra-wide) + 2MP (macro) + 2MP (depth)', secondary: '20MP' },
         battery: 5160,
-        display: '6.67-inch IPS LCD'
+        display: '6.67-inch IPS LCD, 120Hz'
       },
       colorVariants: [
         {
@@ -677,12 +693,13 @@ async function importMockData() {
     },
     {
       name: 'Xiaomi Mi Note 10',
-      model: 'Mi Note 10',
-      description: 'Xiaomi phone with penta-camera setup',
+      model: 'M1910F4G',
+      description: 'Smartphone cao cấp với camera chính 108MP, màn hình AMOLED chất lượng cao và hiệu năng ổn định.',
       image: 'minote10.jpg',
+      os: 'Android 10 (MIUI 11)',
       generalSpecifications: {
         cpu: 'Snapdragon 730G',
-        camera: { primary: '108MP', secondary: '12MP' },
+        camera: { primary: '108MP (wide) + 12MP (telephoto) + 5MP (depth) + 20MP (ultra-wide) + 2MP (macro)', secondary: '32MP' },
         battery: 5260,
         display: '6.47-inch AMOLED'
       },
