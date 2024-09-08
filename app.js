@@ -108,7 +108,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 }).then(() => console.log('Đã kết nối tới cơ sở dữ MongoDB'))
   .catch(err => console.log('Kết nối tới cơ sở dữ liệu MongoDB thất bại', err));
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT;
 const url = `http://localhost:${PORT}`;
 
 // function openBrowser(url) {
