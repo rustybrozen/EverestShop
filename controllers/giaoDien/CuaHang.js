@@ -44,14 +44,14 @@ router.get('/products', currentU, async (req, res) => {
       let sortMethod = {};
 
       if (sortPrice === "asc") {
-        sortMethod.minPrice = 1; 
+        sortMethod.minPrice = 1;
       } else if (sortPrice === "desc") {
-        sortMethod.minPrice = -1; 
+        sortMethod.minPrice = -1;
       } else if (sortPrice === "hot") {
-        sortMethod.isHot = -1; 
+        sortMethod.isHot = -1;
       }
       else if (sortPrice === "buy") {
-        sortMethod.customersPurchased = -1; 
+        sortMethod.customersPurchased = -1;
       }
 
       ProductsQuery = ProductsQuery.sort(sortMethod);
@@ -64,7 +64,7 @@ router.get('/products', currentU, async (req, res) => {
 
     if ((min && max) && (min >= 1 && max >= 1) && ((min <= max))) {
       ProductsQuery = ProductsQuery.where('minPrice').gte(min).lte(max);
-    } else if (min >max) {
+    } else if (min > max) {
       min = ''
       max = ''
     }
@@ -92,6 +92,41 @@ router.get('/products', currentU, async (req, res) => {
     const brandsList = await Brand.find({});
 
     const queryParams = new URLSearchParams(req.query);
+
+
+    // Handle the brands
+    if (Array.isArray(req.query.brands)) {
+      queryParams.delete('brands');  // Remove existing 'brands' to avoid duplication
+      req.query.brands.forEach(brand => {
+        queryParams.append('brands', brand);  // Add each brand separately
+      });
+    } else if (req.query.brands) {
+      queryParams.delete('brands');
+      queryParams.append('brands', req.query.brands);
+    }
+
+    // Handle the colors
+    if (Array.isArray(req.query.colors)) {
+      queryParams.delete('colors');  // Remove existing 'colors' to avoid duplication
+      req.query.colors.forEach(color => {
+        queryParams.append('colors', color);  // Add each color separately
+      });
+    } else if (req.query.colors) {
+      queryParams.delete('colors');
+      queryParams.append('colors', req.query.colors);
+    }
+
+    // Handle pagination without affecting the `brands`
+    if (req.query.page) {
+      queryParams.set('page', req.query.page);  // Set page query param
+    } else {
+      queryParams.set('page', 1);  // Default to page 1 if no page param exists
+    }
+
+
+
+
+
     queryParams.delete('page'); // Remove 'page' param to handle pagination links correctly
 
     res.render('shop/listTest', {

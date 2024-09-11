@@ -1,4 +1,5 @@
 const User = require('../../models/User'); 
+const Brand = require('../../models/Brand'); 
 const express = require('express');
 const router = express.Router();
 
@@ -23,6 +24,17 @@ router.get('/load', async (req, res) => {
     }
     res.json({ quantity, user, totalPrice });
 });
+
+
+// Route to fetch brands
+router.get('/api/brands', async (req, res) => {
+    try {
+      const brands = await Brand.find({}); // Fetch all brands from the database
+      res.json(brands); // Return brands as JSON
+    } catch (err) {
+      res.status(500).json({ error: 'Server error' });
+    }
+  });
 
 
 module.exports = router;
