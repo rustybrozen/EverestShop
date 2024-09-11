@@ -2,16 +2,14 @@
 <style>
   .nav-item.dropdown:hover .dropdown-menu {
   display: block;
+  border-radius: 10px;
+  padding: 0;
+}
+.line{
+  margin:0
 }
 
-.dropdown-item {
-  font-weight: bold;
-  
-  }
 
-  .more-link {
-    font-weight: normal;
-    }
   @media (max-width: 990px) {
     .nav-item.dropdown .dropdown-menu {
       display: none; 
@@ -170,6 +168,9 @@
           listItem.appendChild(link);
           dropdownMenu.appendChild(listItem);
         });
+        const line = document.createElement('hr');
+        line.classList.add('line')
+        dropdownMenu.appendChild(line)
           const listItem = document.createElement('li');
           const link = document.createElement('a');
           link.classList.add('dropdown-item', 'more-link');
