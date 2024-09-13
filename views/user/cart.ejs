@@ -66,8 +66,13 @@
             <div class="single_shop_cart d-flex align-items-center flex-wrap">
               <div class="cart_img mb-4 mb-md-0">
 
-                <img loading="lazy" src='../data/product-images/<%=cart.product.image%>' alt="<%= cart.product.name ?? 'Product Name' %>" />
+                <img loading="lazy" src='../data/product-images/<% if (cart.product.notExists === false) { %><%=cart.product.image%><% } else { %>empty.png <% } %>' alt="<%= cart.product.name ?? 'Product Name' %>" />
               </div>
+
+              
+
+
+
               <div class="cart_cont">
                 <a href="<% if (cart.product.notExists === false) { %>/products/<%= cart.product._id %><% } else { %> # <% } %>">
 
