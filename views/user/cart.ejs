@@ -85,11 +85,11 @@
 
               <% if (cart.product.notExists === false &&  selectedColorVariant.color) { %>
               <div class="cart_qnty d-flex align-items-center ms-md-auto">
-                <div class="cart_qnty_btn quantity-decrease-<%= cart._id %> quantity-decrease" onclick="adjustQuantity('<%= cart.product._id %>',false, '<%= cart.specID %>', <%= selectedVariant.stock ?? 0 %>)">
+                <div class="cart_qnty_btn quantity-decrease-<%= cart._id %> quantity-decrease" onclick="adjustQuantity('<%= cart.product._id %>',false, '<%= cart.specID %>', `<%= selectedVariant.stock ?? 0 %>`)">
                   <i class="las la-minus"></i>
                 </div>
                 <input type="number" class="cart_count quantity-input-<%= cart._id %>" id="quantityInputField-<%= cart.specID %>" onclick="obtainIDinPut('<%= cart.product._id %>','<%= cart.specID %>')" value="<%= cart.quantity %>" min="1" max="<%= selectedVariant.stock ?? 0 %>" aria-label="Số lượng">
-                <div class="cart_qnty_btn quantity-increase-<%= cart._id %> quantity-increase" onclick="adjustQuantity('<%= cart.product._id %>',true, '<%= cart.specID %>', <%= selectedVariant.stock ?? 0 %>)">
+                <div class="cart_qnty_btn quantity-increase-<%= cart._id %> quantity-increase" onclick="adjustQuantity('<%= cart.product._id %>',true, '<%= cart.specID %>', `<%= selectedVariant.stock ?? 0 %>`)">
                   <i class="las la-plus"></i>
                 </div>
               </div>
