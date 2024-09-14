@@ -43,15 +43,19 @@
           <label for="lastName" style="font-weight: 500; color: #666;">Họ và (hoặc) tên đệm:</label>
           <input type="text" class="form-control" id="name" name="lastName" value="<%= user.lastName %>" disabled style="border: 1px solid #ddd; border-radius: 4px; padding: 8px 12px; font-size: 14px;">
         </div>
+        <% if (user.role !== 'Admin'){ %>
         <div class="form-group">
           <label for="role" style="font-weight: 500; color: #666;">Quyền:</label>
           <select class="form-control" id="role" name="role" required style="border: 1px solid #ddd; border-radius: 4px; padding: 8px 12px; font-size: 14px;">
-            <option value="Admin" <%= user.role === 'Admin' ? 'selected' : '' %>>Admin</option>
+           
+            <option value="Admin">Admin</option>
+           
             <option value="Nhân viên bán hàng" <%= user.role === 'Nhân viên bán hàng' ? 'selected' : '' %>>Nhân viên bán hàng</option>
             <option value="Nhân viên kho hàng" <%= user.role === 'Nhân viên kho hàng' ? 'selected' : '' %>>Nhân viên kho hàng</option>
             <option value="Khách hàng" <%= user.role === 'Khách hàng' ? 'selected' : '' %>>Khách hàng</option>
           </select>
         </div>
+        
         <div class="form-group">
           <label for="isActive" style="font-weight: 500; color: #666;">Tình trạng:</label>
           <select class="form-control" id="isActive" name="isActive" required style="border: 1px solid #ddd; border-radius: 4px; padding: 8px 12px; font-size: 14px;">
@@ -59,6 +63,7 @@
             <option value="false" <%= user.isActive === false ? 'selected' : '' %>>Vô hiệu hóa</option>
           </select>
         </div>
+        <%}%>
         <button type="submit" class="btn btn-primary btn-block" style="background-color: #333; border: none; border-radius: 4px; padding: 10px 16px; font-size: 16px; font-weight: 500; color: #fff;">Cập nhật dữ liệu</button>
         <a class="btn btn-primary btn-block" style="background-color: #333; border: none; border-radius: 4px; padding: 10px 16px; font-size: 16px; font-weight: 500; color: #fff;" href="/settings">Quay về</a>
       </form>

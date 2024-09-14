@@ -102,9 +102,10 @@ router.post('/forgot', resetPassLimiter, async (req, res) => {
 
     transporter.sendMail(mailOptions, (err) => {
         if (err) {
-            return res.status(500).json({ message: 'Error sending email' });
+            console.error('Error occurred: ', err); // Log the full error object for debugging
+            return res.status(500).json({ message: 'Error sending email', error: err.message });
         }
-        res.json({ message: 'Hãy kiểm tra hòm thư mail đểkhôi phục mật khẩu' });
+        res.json({ message: 'Hãy kiểm tra hòm thư mail để khôi phục mật khẩu' });
     });
 });
 
